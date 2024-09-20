@@ -2,7 +2,8 @@ import React from 'react'; // Import React
 import '../index.css'; // Import a CSS file for styling if needed (optional)
 
 const YourComponent: React.FC = () => {
-  // Return the JSX for the component
+  // The only real functionality this page needs, apart from displaying the
+  // about section, is the navigation bar.
   return (
     <div className="your-component-container"> {/* Main container for your component */}
       <header>
