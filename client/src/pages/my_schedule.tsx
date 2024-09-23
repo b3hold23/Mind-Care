@@ -20,27 +20,31 @@ const MySchedulePage: React.FC = () => {
   const { scheduleId } = useParams<{ scheduleId: string }>(); 
   const [days, setDays] = useState<Day[]>([]);
 
-  const fetchSchedule = async () => {
-    try {
-      const token = localStorage.getItem('token'); 
-      const response = await fetch(`/api/schedule/${scheduleId}`, {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-      });
+  useEffect(() => {
+    const fetchSchedule = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        const response = await fetch(`/api/schedule/${scheduleId}`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        });
 
-      if (response.ok) {
-        const data = await response.json();
-        setDays(data.days); 
-      } else {
-        console.error('Failed to load schedule');
+        if (response.ok) {
+          const data = await response.json();
+          setDays(data.days);
+        } else {
+          console.error('Failed to load schedule');
+        }
+      } catch (error) {
+        console.error('Error fetching schedule:', error);
       }
-    } catch (error) {
-      console.error('Error fetching schedule:', error);
-    }
-  };
+    };
+
+    fetchSchedule();
+  }, [scheduleId]); 
 
   const toggleHabitCompletion = async (dayId: number, habitId: number) => {
     const updatedDays = days.map((day) => {
@@ -63,10 +67,6 @@ const MySchedulePage: React.FC = () => {
       body: JSON.stringify({ completed: updatedDays }),
     });
   };
-
-  useEffect(() => {
-    fetchSchedule();
-  }, []);
 
   return (
     <div className="my-schedule-container">
@@ -106,7 +106,7 @@ const MySchedulePage: React.FC = () => {
                     ))}
                   </ul>
                   {day.habits.every((habit) => habit.completed) && (
-                    <p>Day Completed ✔️</p>
+                    <p>Day Completed âœ”ï¸</p>
                   )}
                 </div>
               ))}
