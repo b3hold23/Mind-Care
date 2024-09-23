@@ -1,38 +1,84 @@
-import React from 'react'; // Import React
-import '../index.css'; // Import a CSS file for styling if needed (optional)
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // For navigation to other pages
+import '../index.css';
 
-const YourComponent: React.FC = () => {
-  // Return the JSX for the component
+const Login: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    // Send login data to the backend
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        // Save the JWT token and navigate to the home page
+        localStorage.setItem('token', data.token);
+        navigate('/home');
+      } else {
+        setError('Invalid login credentials');
+      }
+    } catch (error) {
+      setError('Something went wrong. Please try again.');
+    }
+  };
+
   return (
-    <div className="your-component-container"> {/* Main container for your component */}
+    <div className="login-container">
       <header>
-        <h1>Your Page Title</h1>
+        <h1>Login to Mind Care</h1>
         <nav>
-          {/* Navigation menu if needed */}
           <ul>
-            <li><a href="/home">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact Us</a></li>
-            {/* Add more navigation links as necessary */}
           </ul>
         </nav>
       </header>
 
       <main>
-        {/* Main content section */}
-        <section className="content-section">
-          <h2>Section Title</h2>
-          <p>This is where your content goes.</p>
-          {/* Add additional elements like forms, lists, or other sections */}
+        <section className="login-section">
+          <h2>Login</h2>
+          {error && <p className="error-message">{error}</p>}
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="email">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
+              required 
+            />
+
+            <label htmlFor="password">Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)} 
+              required 
+            />
+
+            <button type="submit">Login</button>
+          </form>
+          <p>Don't have an account? <a href="/create_profile">Create one here</a></p>
         </section>
       </main>
 
       <footer>
-        {/* Footer section */}
-        <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+        <p>&copy; 2024 Mind Care. All rights reserved.</p>
       </footer>
     </div>
   );
 };
 
-export default YourComponent;
+export default Login;

@@ -7,7 +7,7 @@ const YourComponent: React.FC = () => {
   return (
     <div className="your-component-container"> {/* Main container for your component */}
       <header>
-        <h1>Your Page Title</h1>
+        <h1>About Mind Care</h1>
         <nav>
           {/* Navigation menu if needed */}
           <ul>
