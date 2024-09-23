@@ -1,38 +1,81 @@
-import React from 'react'; // Import React
-import '../index.css'; // Import a CSS file for styling if needed (optional)
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // For navigation
+import '../index.css';
 
-const YourComponent: React.FC = () => {
-  // Return the JSX for the component
+const CreateProfile: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const handleCreateAccount = async (event: React.FormEvent) => {
+    event.preventDefault();
+
+    // Send data to backend to create the account
+    try {
+      const response = await fetch('/api/create-profile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+
+      if (response.ok) {
+        // Redirect to login page on successful account creation
+        navigate('/login');
+      } else {
+        setError('Failed to create account. Please try again.');
+      }
+    } catch (error) {
+      setError('An error occurred. Please try again later.');
+    }
+  };
+
   return (
-    <div className="your-component-container"> {/* Main container for your component */}
+    <div className="create-profile-container">
       <header>
-        <h1>Your Page Title</h1>
+        <h1>Create a New Account</h1>
         <nav>
-          {/* Navigation menu if needed */}
           <ul>
             <li><a href="/home">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact Us</a></li>
-            {/* Add more navigation links as necessary */}
           </ul>
         </nav>
       </header>
 
       <main>
-        {/* Main content section */}
-        <section className="content-section">
-          <h2>Section Title</h2>
-          <p>This is where your content goes.</p>
-          {/* Add additional elements like forms, lists, or other sections */}
+        <section className="create-profile-section">
+          <h2>Create Profile</h2>
+          {error && <p className="error-message">{error}</p>}
+          <form onSubmit={handleCreateAccount}>
+            <label htmlFor="email">Email</label>
+            <input 
+              type="email" 
+              id="email" 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
+              required 
+            />
+
+            <label htmlFor="password">Password</label>
+            <input 
+              type="password" 
+              id="password" 
+              value={password} 
+              onChange={(e) => setPassword(e.target.value)} 
+              required 
+            />
+
+            <button type="submit">Create Account</button>
+          </form>
         </section>
       </main>
 
       <footer>
-        {/* Footer section */}
-        <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+        <p>&copy; 2024 Mind Care. All rights reserved.</p>
       </footer>
     </div>
   );
 };
 
-export default YourComponent;
+export default CreateProfile;
