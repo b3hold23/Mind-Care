@@ -1,39 +1,44 @@
-import React from 'react'; // Import React
-import '../index.css'; // Import a CSS file for styling if needed (optional)
+import React from 'react';
+import '../index.css';
 
-const YourComponent: React.FC = () => {
-  // The only real functionality this page needs, apart from displaying the
-  // contact information, is the navigation bar.
+const ContactPage: React.FC = () => {
   return (
-    <div className="your-component-container"> {/* Main container for your component */}
+    <div className="contact-container">
       <header>
-        <h1>Your Page Title</h1>
+        <h1>Contact Us</h1>
         <nav>
-          {/* Navigation menu if needed */}
           <ul>
             <li><a href="/home">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact Us</a></li>
-            {/* Add more navigation links as necessary */}
           </ul>
         </nav>
       </header>
 
       <main>
-        {/* Main content section */}
-        <section className="content-section">
-          <h2>Section Title</h2>
-          <p>This is where your content goes.</p>
-          {/* Add additional elements like forms, lists, or other sections */}
+        <section className="contact-section">
+          <h2>Get in Touch</h2>
+          <p>If you have any questions, feedback, or need support, feel free to reach out to us.</p>
+          
+          <h3>Contact Information</h3>
+          <ul>
+            <li>Email: support@mindcare.com</li>
+            <li>Phone: +1 123 456 7890</li>
+            <li>Address: 123 Wellness Way, Healthy Town, HT 56789</li>
+          </ul>
+          
+          <h3>Business Hours</h3>
+          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+          <p>Saturday: 10:00 AM - 4:00 PM</p>
+          <p>Sunday: Closed</p>
         </section>
       </main>
 
       <footer>
-        {/* Footer section */}
-        <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+        <p>&copy; 2024 Mind Care. All rights reserved.</p>
       </footer>
     </div>
   );
 };
 
-export default YourComponent;
+export default ContactPage;

@@ -1,39 +1,42 @@
-import React from 'react'; // Import React
-import '../index.css'; // Import a CSS file for styling if needed (optional)
+import React from 'react';
+import '../index.css';
 
-const YourComponent: React.FC = () => {
-  // The only real functionality this page needs, apart from displaying the
-  // about section, is the navigation bar.
+const AboutPage: React.FC = () => {
   return (
-    <div className="your-component-container"> {/* Main container for your component */}
+    <div className="about-container">
       <header>
         <h1>About Mind Care</h1>
         <nav>
-          {/* Navigation menu if needed */}
           <ul>
             <li><a href="/home">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact Us</a></li>
-            {/* Add more navigation links as necessary */}
           </ul>
         </nav>
       </header>
 
       <main>
-        {/* Main content section */}
-        <section className="content-section">
-          <h2>Section Title</h2>
-          <p>This is where your content goes.</p>
-          {/* Add additional elements like forms, lists, or other sections */}
+        <section className="about-section">
+          <h2>What is Mind Care?</h2>
+          <p>
+            Mind Care is an app designed to help you form healthy habits that improve mental well-being. 
+            We believe that small, consistent actions can have a big impact on your mental health. 
+            Whether you're meditating, enjoying nature, or working on a personal hobby, Mind Care helps 
+            you track these habits and stay on top of your wellness goals.
+          </p>
+          <p>
+            With the help of daily reminders and schedules tailored to your preferences, you can create 
+            a personalized routine that fits your life. Our mission is to support your mental well-being, 
+            one habit at a time.
+          </p>
         </section>
       </main>
 
       <footer>
-        {/* Footer section */}
-        <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+        <p>&copy; 2024 Mind Care. All rights reserved.</p>
       </footer>
     </div>
   );
 };
 
-export default YourComponent;
+export default AboutPage;
