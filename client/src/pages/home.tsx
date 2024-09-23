@@ -1,41 +1,111 @@
-import React from 'react'; // Import React
-import '../index.css'; // Import a CSS file for styling if needed (optional)
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Navigation
+import '../index.css';
+
+interface Schedule {
+  id: number;
+  title: string;
+  completed: boolean;
+}
 
 const HomePage: React.FC = () => {
-  // So we will need to retireve the user's profile data from their sql library and adjust the page 
-  // based on their specific data. Specifically, we need previously generated schedule and the 
-  // completion statuses of each schedule.
-  // We will also need to add a button that will allow the user to generate a new schedule.
-  // We will also need to add a button that will allow the user to view their already generated schedules.
-  // There should be functionality for the navigation bar as well as the logo acting as a second home button.
+  const [quote, setQuote] = useState('');
+  const [schedules, setSchedules] = useState<Schedule[]>([]);
+  const navigate = useNavigate();
+
+  // Fetch random quote from ZenQuotes API
+  const fetchQuote = async () => {
+    try {
+      const response = await fetch('https://zenquotes.io/api/random');
+      const data = await response.json();
+      setQuote(data[0].q); // Get the quote text
+    } catch (error) {
+      console.error('Error fetching quote:', error);
+    }
+  };
+
+  // Fetch user's schedules from the server (PostgreSQL)
+  const fetchSchedules = async () => {
+    try {
+      const token = localStorage.getItem('token'); // Get user's JWT token
+      const response = await fetch('/api/schedules', {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setSchedules(data.schedules); // Set the user's schedules
+      } else {
+        console.error('Failed to load schedules');
+      }
+    } catch (error) {
+      console.error('Error fetching schedules:', error);
+    }
+  };
+
+  // Load data on component mount
+  useEffect(() => {
+    fetchQuote();
+    fetchSchedules();
+  }, []);
+
+  // Navigate to the Create Schedule page
+  const handleCreateSchedule = () => {
+    navigate('/new_schedule');
+  };
+
+  // Navigate to view a specific schedule
+  const viewSchedule = (scheduleId: number) => {
+    navigate(`/my_schedule/${scheduleId}`);
+  };
 
   return (
-    <div className="your-component-container"> {/* Main container for your component */}
+    <div className="home-container">
       <header>
-        <h1>Mind Care</h1>
+        <h1 onClick={() => navigate('/home')}>Mind Care</h1>
         <nav>
-          {/* Navigation menu if needed */}
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact Us</a></li>
-            {/* Add more navigation links as necessary */}
           </ul>
         </nav>
       </header>
 
       <main>
-        {/* Main content section */}
-        <section className="content-section">
-          <h2>Section Title</h2>
-          <p>This is where your content goes.</p>
-          {/* Add additional elements like forms, lists, or other sections */}
+        <section className="quote-section">
+          <h2>Inspirational Quote</h2>
+          <p>{quote ? `"${quote}"` : 'Fetching a quote...'}</p>
+        </section>
+
+        <section className="schedule-section">
+          <h2>Your Schedules</h2>
+          <button onClick={handleCreateSchedule}>Create New Schedule</button>
+          {schedules.length === 0 ? (
+            <p>No schedules yet. Create your first one!</p>
+          ) : (
+            <ul>
+              {schedules.map((schedule) => (
+                <li key={schedule.id}>
+                  <span
+                    style={{ textDecoration: schedule.completed ? 'line-through' : 'none' }}
+                    onClick={() => viewSchedule(schedule.id)}
+                  >
+                    {schedule.title}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
         </section>
       </main>
 
       <footer>
-        {/* Footer section */}
-        <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+        <p>&copy; 2024 Mind Care. All rights reserved.</p>
       </footer>
     </div>
   );
