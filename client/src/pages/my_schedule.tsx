@@ -1,29 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'; // For getting the schedule ID from URL
+import { useParams } from 'react-router-dom'; 
 import '../index.css';
 
 interface Habit {
   id: number;
   name: string;
-  time: string; // Time of day for the habit
+  time: string; 
   completed: boolean;
 }
 
 interface Day {
   id: number;
-  date: string; // Date of the day
-  habits: Habit[]; // Habits scheduled for the day
+  date: string; 
+  habits: Habit[]; 
   completed: boolean;
 }
 
 const MySchedulePage: React.FC = () => {
-  const { scheduleId } = useParams<{ scheduleId: string }>(); // Get schedule ID from URL
+  const { scheduleId } = useParams<{ scheduleId: string }>(); 
   const [days, setDays] = useState<Day[]>([]);
 
-  // Fetch the schedule data based on the schedule ID
   const fetchSchedule = async () => {
     try {
-      const token = localStorage.getItem('token'); // Get user's JWT token
+      const token = localStorage.getItem('token'); 
       const response = await fetch(`/api/schedule/${scheduleId}`, {
         method: 'GET',
         headers: {
@@ -34,7 +33,7 @@ const MySchedulePage: React.FC = () => {
 
       if (response.ok) {
         const data = await response.json();
-        setDays(data.days); // Set the schedule's days and habits
+        setDays(data.days); 
       } else {
         console.error('Failed to load schedule');
       }
@@ -43,7 +42,6 @@ const MySchedulePage: React.FC = () => {
     }
   };
 
-  // Toggle habit completion
   const toggleHabitCompletion = async (dayId: number, habitId: number) => {
     const updatedDays = days.map((day) => {
       if (day.id === dayId) {
@@ -56,7 +54,6 @@ const MySchedulePage: React.FC = () => {
     });
     setDays(updatedDays);
 
-    // Send the update to the backend to persist the changes
     await fetch(`/api/schedule/${scheduleId}/habit/${habitId}`, {
       method: 'PUT',
       headers: {

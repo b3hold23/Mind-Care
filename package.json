@@ -20,6 +20,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
+    "react-router-dom": "^6.26.2",
     "tsconfig.json": "^1.0.11"
   }
 }

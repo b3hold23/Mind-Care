@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // For navigation
+import { useNavigate } from 'react-router-dom';
 import '../index.css';
 
 const CreateProfile: React.FC = () => {
@@ -11,7 +11,6 @@ const CreateProfile: React.FC = () => {
   const handleCreateAccount = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    // Send data to backend to create the account
     try {
       const response = await fetch('/api/create-profile', {
         method: 'POST',
@@ -20,12 +19,12 @@ const CreateProfile: React.FC = () => {
       });
 
       if (response.ok) {
-        // Redirect to login page on successful account creation
         navigate('/login');
       } else {
         setError('Failed to create account. Please try again.');
       }
     } catch (error) {
+      console.error('Error creating account:', error);
       setError('An error occurred. Please try again later.');
     }
   };

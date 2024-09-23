@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // For navigation
+import { useNavigate } from 'react-router-dom'; 
 import '../index.css';
 
 const habitOptions = ['Meditate', 'Read a Book', 'Enjoy Nature', 'Work on Art', 'Listen to Music', 'Personal Hobby'];
@@ -18,28 +18,24 @@ const NewSchedulePage: React.FC = () => {
   ]);
   const navigate = useNavigate();
 
-  // Handle changes to a habit entry
   const handleHabitChange = (index: number, field: keyof HabitEntry, value: string) => {
     const updatedHabits = [...habits];
     updatedHabits[index][field] = value;
     setHabits(updatedHabits);
   };
 
-  // Add a new habit entry (up to 5)
   const addHabitEntry = () => {
     if (habits.length < 5) {
       setHabits([...habits, { habit: '', time: '', frequency: '' }]);
     }
   };
 
-  // Remove the last habit entry (cannot remove the first one)
   const removeHabitEntry = () => {
     if (habits.length > 1) {
       setHabits(habits.slice(0, -1));
     }
   };
 
-  // Submit the schedule to the backend
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     const token = localStorage.getItem('token');
@@ -55,7 +51,7 @@ const NewSchedulePage: React.FC = () => {
       });
 
       if (response.ok) {
-        navigate('/home'); // Redirect to home page after schedule creation
+        navigate('/home'); 
       } else {
         console.error('Failed to create schedule');
       }

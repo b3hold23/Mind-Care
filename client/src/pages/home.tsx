@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Navigation
+import { useNavigate } from 'react-router-dom'; 
 import '../index.css';
 
 interface Schedule {
@@ -13,21 +13,19 @@ const HomePage: React.FC = () => {
   const [schedules, setSchedules] = useState<Schedule[]>([]);
   const navigate = useNavigate();
 
-  // Fetch random quote from ZenQuotes API
   const fetchQuote = async () => {
     try {
       const response = await fetch('https://zenquotes.io/api/random');
       const data = await response.json();
-      setQuote(data[0].q); // Get the quote text
+      setQuote(data[0].q); 
     } catch (error) {
       console.error('Error fetching quote:', error);
     }
   };
 
-  // Fetch user's schedules from the server (PostgreSQL)
   const fetchSchedules = async () => {
     try {
-      const token = localStorage.getItem('token'); // Get user's JWT token
+      const token = localStorage.getItem('token'); 
       const response = await fetch('/api/schedules', {
         method: 'GET',
         headers: {
@@ -38,7 +36,7 @@ const HomePage: React.FC = () => {
 
       if (response.ok) {
         const data = await response.json();
-        setSchedules(data.schedules); // Set the user's schedules
+        setSchedules(data.schedules); 
       } else {
         console.error('Failed to load schedules');
       }
@@ -47,18 +45,15 @@ const HomePage: React.FC = () => {
     }
   };
 
-  // Load data on component mount
   useEffect(() => {
     fetchQuote();
     fetchSchedules();
   }, []);
 
-  // Navigate to the Create Schedule page
   const handleCreateSchedule = () => {
     navigate('/new_schedule');
   };
 
-  // Navigate to view a specific schedule
   const viewSchedule = (scheduleId: number) => {
     navigate(`/my_schedule/${scheduleId}`);
   };
