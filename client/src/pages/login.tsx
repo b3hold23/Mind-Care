@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // For navigation to other pages
+import { useNavigate } from 'react-router-dom'; 
 import '../index.css';
 
 const Login: React.FC = () => {
@@ -11,7 +11,6 @@ const Login: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    // Send login data to the backend
     try {
       const response = await fetch('/api/login', {
         method: 'POST',
@@ -21,13 +20,13 @@ const Login: React.FC = () => {
 
       if (response.ok) {
         const data = await response.json();
-        // Save the JWT token and navigate to the home page
         localStorage.setItem('token', data.token);
         navigate('/home');
       } else {
         setError('Invalid login credentials');
       }
     } catch (error) {
+      console.error('Error logging in:', error);
       setError('Something went wrong. Please try again.');
     }
   };
