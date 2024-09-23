@@ -34,7 +34,7 @@ const Login: React.FC = () => {
   return (
     <div className="login-container">
       <header className='welcome-header'>
-        <h1>Welcome to MindCare</h1>
+        <h1>Welcome to <a className='welcome-title'>MindCare</a></h1>
       </header>
 
       <main>
