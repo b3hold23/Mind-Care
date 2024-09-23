@@ -24,6 +24,6 @@ export const login = async (req: Request, res: Response) => {
     return res.json({ token })
 };
 
-const router = Router();
+export const router = Router();
 
 router.post('/login', login);
