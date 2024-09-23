@@ -33,15 +33,8 @@ const Login: React.FC = () => {
 
   return (
     <div className="login-container">
-      <header>
-        <h1>Login to Mind Care</h1>
-        <nav>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-          </ul>
-        </nav>
+      <header className='welcome-header'>
+        <h1>Welcome to MindCare</h1>
       </header>
 
       <main>
