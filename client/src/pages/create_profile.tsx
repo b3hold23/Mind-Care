@@ -1,43 +1,41 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 import '../index.css';
 
-const Login: React.FC = () => {
+const CreateProfile: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async (event: React.FormEvent) => {
+  const handleCreateAccount = async (event: React.FormEvent) => {
     event.preventDefault();
 
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('/api/create-profile', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
       });
 
       if (response.ok) {
-        const data = await response.json();
-        localStorage.setItem('token', data.token);
-        navigate('/home');
+        navigate('/login');
       } else {
-        setError('Invalid login credentials');
+        setError('Failed to create account. Please try again.');
       }
     } catch (error) {
-      console.error('Error logging in:', error);
-      setError('Something went wrong. Please try again.');
+      console.error('Error creating account:', error);
+      setError('An error occurred. Please try again later.');
     }
   };
 
   return (
-    <div className="login-container">
+    <div className="create-profile-container">
       <header>
-        <h1>Login to Mind Care</h1>
+        <h1>Create a New Account</h1>
         <nav>
           <ul>
-            <li><a href="/">Home</a></li>
+            <li><a href="/home">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact Us</a></li>
           </ul>
@@ -45,10 +43,10 @@ const Login: React.FC = () => {
       </header>
 
       <main>
-        <section className="login-section">
-          <h2>Login</h2>
+        <section className="create-profile-section">
+          <h2>Create Profile</h2>
           {error && <p className="error-message">{error}</p>}
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleCreateAccount}>
             <label htmlFor="email">Email</label>
             <input 
               type="email" 
@@ -67,9 +65,8 @@ const Login: React.FC = () => {
               required 
             />
 
-            <button type="submit">Login</button>
+            <button type="submit">Create Account</button>
           </form>
-          <p>Don't have an account? <a href="/create_profile">Create one here</a></p>
         </section>
       </main>
 
@@ -78,5 +75,6 @@ const Login: React.FC = () => {
       </footer>
     </div>
   );
-}
-export default Login;
+};
+
+export default CreateProfile;
