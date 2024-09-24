@@ -28,19 +28,14 @@ const ContactPage: React.FC = () => {
       <main>
         <section className="contact-section">
           <h2>Get in Touch</h2>
-          <p>If you have any questions, feedback, or need support, feel free to reach out to us.</p>
+          <p>If you have any questions, feedback, or need support, feel free to reach out to us on Github.</p>
           
-          <h3>Contact Information</h3>
+          <h3>Github Usernames:</h3>
           <ul>
-            <li>Email: support@mindcare.com</li>
-            <li>Phone: +1 123 456 7890</li>
-            <li>Address: 123 Wellness Way, Healthy Town, HT 56789</li>
+            <li>b3hold23</li>
+            <li>MagneticSoul7</li>
+            <li>Redwolf917</li>
           </ul>
-          
-          <h3>Business Hours</h3>
-          <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-          <p>Saturday: 10:00 AM - 4:00 PM</p>
-          <p>Sunday: Closed</p>
         </section>
       </main>
 

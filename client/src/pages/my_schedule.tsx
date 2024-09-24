@@ -115,7 +115,7 @@ const MySchedulePage: React.FC = () => {
                     ))}
                   </ul>
                   {day.habits.every((habit) => habit.completed) && (
-                    <p>Day Completed âœ”ï¸</p>
+                    <p>Day Completed &#10004;&#65039;</p>
                   )}
                 </div>
               ))}
