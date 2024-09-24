@@ -80,11 +80,11 @@ const HomePage: React.FC = () => {
           onClick={() => navigate('/home')} />
       <h1 className='welcome-title' onClick={() => navigate('/home')}>Mind Care</h1>
         <nav>
-          <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact Us</a></li>
-          </ul>
+           <ul>
+            <li><a href="/" className='navBar'>Home</a></li>
+            <li><a href="/about" className='navBar'>About</a></li>
+            <li><a href="/contact" className='navBar'>Contact Us</a></li>
+      </ul>
         </nav>
       </header>
 

@@ -141,5 +141,20 @@ footer {
   width: 650px;  
 }
 
-.navbar {
+nav {
+  margin-top: 80px; 
+  margin-left: 80px;
+}
+
+ul {
+  display: flex; /* Display list items in a row */
+  gap: 20px; 
+  list-style: none; 
+  padding: 0;
+}
+
+.navBar {
+  color: #f4a261;
+  text-decoration: none; /* Remove underline */
+  font-size: 1.2rem;
 }
