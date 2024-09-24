@@ -142,20 +142,24 @@ footer {
 }
 
 nav {
-  margin-top: 80px; 
+  margin-top: 80px;
   margin-left: 80px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 60%;
 }
 
 ul {
-  display: flex; 
-  gap: 20px; 
-  list-style: none; 
+  display: flex;
+  gap: 20px;
+  list-style: none;
   padding: 0;
 }
 
 .navBar {
   color: #f4a261;
-  text-decoration: none; /* Remove underline */
+  text-decoration: none; 
   display: flex;
 }
 
@@ -206,3 +210,11 @@ ul {
   border-radius: 10px;
   padding: 20px;
 }
+
+.newSchedule-section {
+  background-color: #f4a261;
+  color: #1a1a1a;
+  border-radius: 20px;
+  padding: 30px;
+}
+
