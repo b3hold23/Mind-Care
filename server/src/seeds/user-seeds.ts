@@ -1,9 +1,9 @@
-import { User } from '../models/user.js';
+import { User } from '../models/index.js';
 
 export const seedUsers = async () => {
   await User.bulkCreate([
-    { username: 'JohnSmith', password: 'password' },
-    { username: 'SunnySide', password: 'password' },
-    { username: 'CmanderZavala', password: 'password' },
+    { email: 'JohnSmith@gmail.com', password: 'password' },
+    { email: 'SunnySide@gmail.com', password: 'password' },
+    { email: 'CmanderZavala@gmail.com', password: 'password' },
   ], { individualHooks: true });
 };
