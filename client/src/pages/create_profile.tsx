@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
+import Logo from '../assets/Mind-Care-Logo.svg';
+
 
 const CreateProfile: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -31,8 +33,12 @@ const CreateProfile: React.FC = () => {
 
   return (
     <div className="create-profile-container">
-      <header>
-        <h1>Create a New Account</h1>
+      <header className='welcome-header'>
+      <img 
+          src={Logo} 
+          alt="Mind Care Logo" 
+          className="logo" />
+        <h1>Welcome to Mindcare</h1>
         <nav>
           <ul>
             <li><a href="/home">Home</a></li>
@@ -40,11 +46,12 @@ const CreateProfile: React.FC = () => {
             <li><a href="/contact">Contact Us</a></li>
           </ul>
         </nav>
+        
       </header>
 
       <main>
         <section className="create-profile-section">
-          <h2>Create Profile</h2>
+          <h2>Create account below:</h2>
           {error && <p className="error-message">{error}</p>}
           <form onSubmit={handleCreateAccount}>
             <label htmlFor="email">Email</label>

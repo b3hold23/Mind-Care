@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import '../index.css';
+import Logo from '../assets/Mind-Care-Logo.svg';
+
 
 interface Schedule {
   id: number;
@@ -15,11 +17,21 @@ const HomePage: React.FC = () => {
 
   const fetchQuote = async () => {
     try {
-      const response = await fetch('https://zenquotes.io/api/random');
+      const response = await fetch('/api/quote'); // Fetch from the backend route
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       const data = await response.json();
-      setQuote(data[0].q); 
+      
+      // Check if the response contains the expected data structure
+      if (data && data[0] && data[0].q) {
+        setQuote(data[0].q); // Set the quote from the backend
+      } else {
+        setQuote('Unable to fetch a quote at the moment.');
+      }
     } catch (error) {
       console.error('Error fetching quote:', error);
+      setQuote('Failed to fetch a quote.');
     }
   };
 
@@ -61,10 +73,15 @@ const HomePage: React.FC = () => {
   return (
     <div className="home-container">
       <header>
-        <h1 onClick={() => navigate('/home')}>Mind Care</h1>
+      <img 
+          src={Logo} 
+          alt="Mind Care Logo" 
+          className="logo" 
+          onClick={() => navigate('/home')} />
+      <h1 onClick={() => navigate('/home')}>Mind Care</h1>
         <nav>
           <ul>
-            <li><a href="/">Home</a></li>
+            <li><a href="/home">Home</a></li>
             <li><a href="/about">About</a></li>
             <li><a href="/contact">Contact Us</a></li>
           </ul>
