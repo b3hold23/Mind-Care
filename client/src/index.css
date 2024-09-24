@@ -187,3 +187,9 @@ ul {
   width: 250px; 
   margin: 30px;
 }
+
+.contact-section {
+  background-color: #f4a261;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
