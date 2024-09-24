@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom'; 
 import '../index.css';
+import Logo from '../assets/Mind-Care-Logo.svg';
+
 
 interface Habit {
   id: number;
@@ -19,6 +22,7 @@ interface Day {
 const MySchedulePage: React.FC = () => {
   const { scheduleId } = useParams<{ scheduleId: string }>(); 
   const [days, setDays] = useState<Day[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchSchedule = async () => {
@@ -71,6 +75,11 @@ const MySchedulePage: React.FC = () => {
   return (
     <div className="my-schedule-container">
       <header>
+      <img 
+          src={Logo} 
+          alt="Mind Care Logo" 
+          className="logo" 
+          onClick={() => navigate('/home')} />
         <h1>Your Schedule</h1>
         <nav>
           <ul>
