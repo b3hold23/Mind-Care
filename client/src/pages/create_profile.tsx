@@ -31,13 +31,14 @@ const CreateProfile: React.FC = () => {
 
   return (
     <div className="create-profile-container">
-      <header>
-        <h1>Create a New Account</h1>
+      <header className='welcome-header'>
+        <h1><a className='create-profile'>Create a New Account</a>
+        </h1>
       </header>
 
       <main>
         <section className="create-profile-section">
-          <h2>Create Profile</h2>
+          <h2>Create account below:</h2>
           {error && <p className="error-message">{error}</p>}
           <form onSubmit={handleCreateAccount}>
             <label htmlFor="email">Email</label>
