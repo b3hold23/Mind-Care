@@ -34,12 +34,12 @@ const Login: React.FC = () => {
 
   return (
     <div className="login-container">
-      <header>
+      <header className='welcome-header'>
       <img 
           src={Logo} 
           alt="Mind Care Logo" 
           className="logo" />
-        <h1>Login to Mind Care</h1>
+        <h1>Welcome to MindCare</h1>
       </header>
 
       <main>

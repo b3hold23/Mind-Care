@@ -9,6 +9,7 @@ import MySchedulePage from './pages/my_schedule';
 import NewSchedulePage from './pages/new_schedule';
 
 function App() {
+
   return (
     <Router>
       <Routes>

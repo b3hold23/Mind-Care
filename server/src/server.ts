@@ -1,4 +1,5 @@
 const forceDatabaseRefresh = false;
+import sequelize from './config/connection';
 
 import dotenv from 'dotenv';
 dotenv.config();
