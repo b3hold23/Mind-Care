@@ -32,7 +32,7 @@ const CreateProfile: React.FC = () => {
   return (
     <div className="create-profile-container">
       <header className='welcome-header'>
-        <h1><a className='create-profile'>Create a New Account</a>
+        <h1><a href='/' className='create-profile'>Create a New Account</a>
         </h1>
       </header>
 
