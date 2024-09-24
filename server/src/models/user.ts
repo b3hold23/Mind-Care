@@ -3,7 +3,6 @@ import bcrypt from 'bcrypt';
 
 interface UserAttributes {
   id: number;
-  username: string;
   email: string;
   password: string;
 }
@@ -14,11 +13,7 @@ export class User
   extends Model<UserAttributes, UserCreationAttributes>
   implements UserAttributes
 {
-  static bulkCreate(arg0: { username: string; password: string; }[], arg1: { individualHooks: boolean; }) {
-    throw new Error('Method not implemented.');
-  }
   public id!: number;
-  public username!: string;
   public email!: string;
   public password!: string;
 
@@ -39,10 +34,6 @@ export function UserFactory(sequelize: Sequelize): typeof User {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
-      },
-      username: {
-        type: DataTypes.STRING,
-        allowNull: false,
       },
       email: {
         type: DataTypes.STRING,

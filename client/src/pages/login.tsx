@@ -13,7 +13,7 @@ const Login: React.FC = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
