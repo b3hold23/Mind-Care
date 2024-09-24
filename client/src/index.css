@@ -158,3 +158,22 @@ ul {
   text-decoration: none; /* Remove underline */
   font-size: 1.2rem;
 }
+
+.quote-section {
+  background-color: #f4a261;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 250px; 
+  height: 150px;
+}
+
+.quote-section h2 {
+  color: #264753;
+}
+
+.quote-section p {
+  color: #333;
+  font-style: italic;
+}
