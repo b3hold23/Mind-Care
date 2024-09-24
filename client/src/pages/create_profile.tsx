@@ -33,12 +33,12 @@ const CreateProfile: React.FC = () => {
 
   return (
     <div className="create-profile-container">
-      <header>
+      <header className='welcome-header'>
       <img 
           src={Logo} 
           alt="Mind Care Logo" 
           className="logo" />
-        <h1>Create a New Account</h1>
+        <h1>Welcome to Mindcare</h1>
       </header>
 
       <main>
