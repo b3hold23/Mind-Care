@@ -62,18 +62,18 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="home-container">
-      <header>
+      <header className='welcome-header'>
       <img 
           src={Logo} 
           alt="Mind Care Logo" 
           className="logo" 
           onClick={() => navigate('/home')} />
-      <h1 onClick={() => navigate('/home')}>Mind Care</h1>
+      <h1 className='welcome-title' onClick={() => navigate('/home')}>Mind Care</h1>
         <nav>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact Us</a></li>
+            <li><a href="/" className='navBar' >Home</a></li>
+            <li><a href="/about" className='navBar'>About</a></li>
+            <li><a href="/contact" className='navBar'>Contact Us</a></li>
           </ul>
         </nav>
       </header>

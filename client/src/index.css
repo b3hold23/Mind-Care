@@ -132,7 +132,6 @@ footer {
   left: 0;
   padding: 20px 20px;    
 }
-
 .create-profile-section {
   background-color: #f4a261;
   padding: 30px;
@@ -140,4 +139,7 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 650px;  
+}
+
+.navbar {
 }
