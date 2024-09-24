@@ -20,12 +20,15 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+<<<<<<< HEAD
+=======
     "@types/react-router-dom": "^5.3.3",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "node-fetch": "^3.3.2",
     "react": "^18.3.1",
+>>>>>>> 7a081e96c59cc7d37ba5f5bdfbfa08e6f960c6e6
     "react-router-dom": "^6.26.2",
     "tsconfig.json": "^1.0.11"
   },
