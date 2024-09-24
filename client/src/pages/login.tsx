@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import '../index.css';
+import Logo from '../assets/Mind-Care-Logo.svg';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -34,6 +35,10 @@ const Login: React.FC = () => {
   return (
     <div className="login-container">
       <header>
+      <img 
+          src={Logo} 
+          alt="Mind Care Logo" 
+          className="logo" />
         <h1>Login to Mind Care</h1>
       </header>
 

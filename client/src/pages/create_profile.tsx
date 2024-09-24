@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
+import Logo from '../assets/Mind-Care-Logo.svg';
+
 
 const CreateProfile: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -32,6 +34,10 @@ const CreateProfile: React.FC = () => {
   return (
     <div className="create-profile-container">
       <header>
+      <img 
+          src={Logo} 
+          alt="Mind Care Logo" 
+          className="logo" />
         <h1>Create a New Account</h1>
       </header>
 

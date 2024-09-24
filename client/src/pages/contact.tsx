@@ -1,10 +1,20 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import '../index.css';
+import Logo from '../assets/Mind-Care-Logo.svg';
+
 
 const ContactPage: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="contact-container">
       <header>
+      <img 
+          src={Logo} 
+          alt="Mind Care Logo" 
+          className="logo" 
+          onClick={() => navigate('/home')} />
         <h1>Contact Us</h1>
         <nav>
           <ul>

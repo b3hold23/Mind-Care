@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import '../index.css';
+import Logo from '../assets/Mind-Care-Logo.svg';
+
 
 interface Schedule {
   id: number;
@@ -61,7 +63,12 @@ const HomePage: React.FC = () => {
   return (
     <div className="home-container">
       <header>
-        <h1 onClick={() => navigate('/home')}>Mind Care</h1>
+      <img 
+          src={Logo} 
+          alt="Mind Care Logo" 
+          className="logo" 
+          onClick={() => navigate('/home')} />
+      <h1 onClick={() => navigate('/home')}>Mind Care</h1>
         <nav>
           <ul>
             <li><a href="/">Home</a></li>
