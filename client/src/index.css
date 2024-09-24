@@ -132,7 +132,6 @@ footer {
   left: 0;
   padding: 20px 20px;    
 }
-
 .create-profile-section {
   background-color: #f4a261;
   padding: 30px;
@@ -141,3 +140,81 @@ footer {
   text-align: center;
   width: 650px;  
 }
+
+nav {
+  margin-top: 80px;
+  margin-left: 80px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 60%;
+}
+
+ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.navBar {
+  color: #f4a261;
+  text-decoration: none; 
+  display: flex;
+}
+
+.quote-section {
+  background-color: #f4a261;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 250px; 
+  height: 150px;
+}
+
+.quote-section h2 {
+  color: #264753;
+}
+
+.quote-section p {
+  color: #333;
+  font-style: italic;
+}
+
+.schedule-section {
+  background-color: #f4a261;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 250px; 
+  margin: 30px;
+}
+
+.contact-section {
+  background-color: #f4a261;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section {
+  background-color: #f4a261;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+}
+
+.aboutMe-p {
+  background-color: #e76b54;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.newSchedule-section {
+  background-color: #f4a261;
+  color: #1a1a1a;
+  border-radius: 20px;
+  padding: 30px;
+}
+

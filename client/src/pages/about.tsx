@@ -9,7 +9,7 @@ const AboutPage: React.FC = () => {
 
   return (
     <div className="about-container">
-      <header>
+      <header className='welcome-header'>
       <img 
           src={Logo} 
           alt="Mind Care Logo" 
@@ -18,9 +18,9 @@ const AboutPage: React.FC = () => {
         <h1>About Mind Care</h1>
         <nav>
           <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact Us</a></li>
+            <li><a className='navBar' href="/home">Home</a></li>
+            <li><a className='navBar' href="/about">About</a></li>
+            <li><a className='navBar' href="/contact">Contact Us</a></li>
           </ul>
         </nav>
       </header>
@@ -28,13 +28,11 @@ const AboutPage: React.FC = () => {
       <main>
         <section className="about-section">
           <h2>What is Mind Care?</h2>
-          <p>
+          <p className='aboutMe-p'>
             Mind Care is an app designed to help you form healthy habits that improve mental well-being. 
             We believe that small, consistent actions can have a big impact on your mental health. 
             Whether you're meditating, enjoying nature, or working on a personal hobby, Mind Care helps 
-            you track these habits and stay on top of your wellness goals.
-          </p>
-          <p>
+            you track these habits and stay on top of your wellness goals. <br />
             With the help of daily reminders and schedules tailored to your preferences, you can create 
             a personalized routine that fits your life. Our mission is to support your mental well-being, 
             one habit at a time.

@@ -9,7 +9,7 @@ const ContactPage: React.FC = () => {
 
   return (
     <div className="contact-container">
-      <header>
+      <header className='welcome-header'>
       <img 
           src={Logo} 
           alt="Mind Care Logo" 
@@ -18,9 +18,9 @@ const ContactPage: React.FC = () => {
         <h1>Contact Us</h1>
         <nav>
           <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact Us</a></li>
+            <li><a className="navBar" href="/home">Home</a></li>
+            <li><a className="navBar" href="/about">About</a></li>
+            <li><a className="navBar" href="/contact">Contact Us</a></li>
           </ul>
         </nav>
       </header>
@@ -29,6 +29,8 @@ const ContactPage: React.FC = () => {
         <section className="contact-section">
           <h2>Get in Touch</h2>
           <p>If you have any questions, feedback, or need support, feel free to reach out to us on Github.</p>
+          <h2>Get in Touch!</h2>
+          <p>If you have any questions, feedback, or need support, feel free to reach out to us.</p>
           
           <h3>Github Usernames:</h3>
           <ul>

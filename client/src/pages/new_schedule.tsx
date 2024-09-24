@@ -64,7 +64,7 @@ const NewSchedulePage: React.FC = () => {
 
   return (
     <div className="new-schedule-container">
-      <header>
+      <header className='welcome-header'>
       <img 
           src={Logo} 
           alt="Mind Care Logo" 
@@ -72,16 +72,16 @@ const NewSchedulePage: React.FC = () => {
           onClick={() => navigate('/home')} />
         <h1>Create New Schedule</h1>
         <nav>
-          <ul>
-            <li><a href="/home">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact Us</a></li>
+        <ul>
+            <li><a className='navBar' href="/home">Home</a></li>
+            <li><a className='navBar' href="/about">About</a></li>
+            <li><a className='navBar' href="/contact">Contact Us</a></li>
           </ul>
         </nav>
       </header>
 
       <main>
-        <section className="new-schedule-section">
+        <section className="newSchedule-section">
           <h2>Schedule Details</h2>
           <form onSubmit={handleSubmit}>
             <label htmlFor="title">Schedule Title</label>
