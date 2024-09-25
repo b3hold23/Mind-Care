@@ -1,5 +1,6 @@
 import { DataTypes, type Sequelize, Model, type Optional } from 'sequelize';
 import bcrypt from 'bcrypt';
+import { Schedule } from './schedule.js'; // Import the Schedule model
 
 interface UserAttributes {
   id: number;
@@ -57,6 +58,10 @@ export function UserFactory(sequelize: Sequelize): typeof User {
       },
     }
   );
+
+  // Add association between User and Schedule
+  User.hasMany(Schedule, { foreignKey: 'userId' });
+  Schedule.belongsTo(User, { foreignKey: 'userId' });
 
   return User;
 }

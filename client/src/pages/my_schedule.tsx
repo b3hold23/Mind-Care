@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import '../index.css';
 import Logo from '../assets/Mind-Care-Logo.svg';
 
-
 interface Habit {
   id: number;
   name: string;
@@ -48,7 +47,7 @@ const MySchedulePage: React.FC = () => {
     };
 
     fetchSchedule();
-  }, [scheduleId]); 
+  }, [scheduleId]);
 
   const toggleHabitCompletion = async (dayId: number, habitId: number) => {
     const updatedDays = days.map((day) => {
@@ -61,21 +60,21 @@ const MySchedulePage: React.FC = () => {
       return day;
     });
     setDays(updatedDays);
-
+  
     await fetch(`/api/schedule/${scheduleId}/habit/${habitId}`, {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ completed: updatedDays }),
+      body: JSON.stringify({ completed: !days.find((day) => day.id === dayId)?.habits.find((habit) => habit.id === habitId)?.completed }),
     });
   };
 
   return (
     <div className="my-schedule-container">
       <header className='welcome-header'>
-      <img 
+        <img 
           src={Logo} 
           alt="Mind Care Logo" 
           className="logo" 

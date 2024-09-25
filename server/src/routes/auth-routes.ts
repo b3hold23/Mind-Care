@@ -22,7 +22,7 @@ export const login = async (req: Request, res: Response) => {
     
     const secretKey = process.env.JWT_SECRET_KEY || '';
 
-    const token = jwt.sign({ email }, secretKey, { expiresIn: '1h'});
+    const token = jwt.sign({ email, id: user.id }, secretKey, { expiresIn: '1h'});
     return res.json({ token })
 };
 
@@ -32,10 +32,10 @@ export const register = async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
     try {
-        await User.create({ email, password });
+        const user = await User.create({ email, password });
         const secretKey = process.env.JWT_SECRET_KEY || '';
 
-        const token = jwt.sign({ email }, secretKey, { expiresIn: '1h'});
+        const token = jwt.sign({ email, id: user.id }, secretKey, { expiresIn: '1h'});
         return res.json({ token });
     } catch (error) {
         return res.status(500).json({ message: 'Error registering user' });
