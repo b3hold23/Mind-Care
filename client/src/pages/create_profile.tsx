@@ -14,14 +14,14 @@ const CreateProfile: React.FC = () => {
     event.preventDefault();
 
     try {
-      const response = await fetch('/api/create-profile', {
+      const response = await fetch('/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
       });
 
       if (response.ok) {
-        navigate('/login');
+        navigate('./login.tsx');
       } else {
         setError('Failed to create account. Please try again.');
       }

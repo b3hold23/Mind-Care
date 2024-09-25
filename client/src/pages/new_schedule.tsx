@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import '../index.css';
 import Logo from '../assets/Mind-Care-Logo.svg';
 
-
 const habitOptions = ['Meditate', 'Read a Book', 'Enjoy Nature', 'Work on Art', 'Listen to Music', 'Personal Hobby'];
 const frequencyOptions = ['Every day', 'Every other day', 'Every two days'];
 
@@ -65,7 +64,7 @@ const NewSchedulePage: React.FC = () => {
   return (
     <div className="new-schedule-container">
       <header className='welcome-header'>
-      <img 
+        <img 
           src={Logo} 
           alt="Mind Care Logo" 
           className="logo" 
