@@ -1,27 +1,27 @@
 # Mindcare (Group Project #2)
 
-## Description - TBA
+## Description 
 
 This is a habit-building app that will help a user to improve their mental health and overall mood. With a built-in calendar feature and a list of various habits to choose from, the user can personalize their experience. Once a user has created their account, they can choose one or more habits from a list of habits (or create their own habit) to add to their calendar in the app. When the user adds a habit to their calendar, they can choose the days, times, and frequency of the habit. Then the app will auto-generate a 3-week schedule for them (the length of time that many experts say it takes to form most habits). And if they complete that habit for three weeks, the app will say “Goal Completed.” In this way, the app will help the user to keep track of their progress and successes to encourage them to follow through on these habits for the full three weeks. 
 
 Disclaimer: Not a substitute for getting professional help from a Medical Doctor and/or a Licensed Therapist and/or a Psychiatrist. And, of course, in the case of an emergency, there’s always 911 and several different Suicide Hotline phone numbers.  
 
-
-## Technologies Used - TBA
+## Technologies Used 
 
 |        |  | 
 | ------------- |:-------------:| 
 | HTML            |  | 
-| CSS             |  |   
+| CSS framework   |  |   
 | Javascript      |  |
 | Markdown        |  |
 | VS Code         |  |   
 | Git             |  |  
 | Github          |  |
 | Server Side API |  |
-|   TBA           |  |
-|   TBA           |  |
-
+| Bootstrap       |  |
+| React + Vite    |  |
+| Typescript      |  |
+| Sequelize       |  |
 
 ## Table of Contents: 
 
@@ -39,15 +39,11 @@ Disclaimer: Not a substitute for getting professional help from a Medical Doctor
 12. Author Info <br>
 13. Deployed Link <br>
 
-## User Story - TBA (To Be Added)
+## User Story
 
-AS A USER in the U.S.A., 
-<br>
-<br>
-I WANT a website that.... ,
-<br>
-<br>
-SO THAT I can....
+AS A USER, <br> 
+I WANT a website where I can choose habits to form and the website will autogenerate a three-week calendar to complete these habits, and I will be able to view my schedule or calendar to view weekly and daily tracked goals, <br>
+SO THAT I can improve my mental and physical health via better habits while keeping track of my progress and being able to see my completed goals.
 
 ## Acceptance Criteria - TBA (To Be Added)
 
@@ -57,14 +53,13 @@ TBA - To Be Added.
 
 N/A
 
-## Usage - TBA
+## Usage 
 
-To use this website,.... 
+To use this website, create an account and then choose a habit to add to your profile. Then the website will generate a 3 week schedule to help you form that habit.
 
-## Wireframe - TBA
+## Wireframe
 
 (https://docs.google.com/presentation/d/1bcXqV381zQ7R_cCZGzUNgk2K4RcTkFkVXySek2EWayw/edit?usp=sharing) 
-
 
 ## Contributors
 
