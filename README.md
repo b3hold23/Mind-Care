@@ -2,22 +2,25 @@
 
 ## Description - TBA
 
-TBA - To Be Added. 
+This is a habit-building app that will help a user to improve their mental health and overall mood. With a built-in calendar feature and a list of various habits to choose from, the user can personalize their experience. Once a user has created their account, they can choose one or more habits from a list of habits (or create their own habit) to add to their calendar in the app. When the user adds a habit to their calendar, they can choose the days, times, and frequency of the habit. Then the app will auto-generate a 3-week schedule for them (the length of time that many experts say it takes to form most habits). And if they complete that habit for three weeks, the app will say “Goal Completed.” In this way, the app will help the user to keep track of their progress and successes to encourage them to follow through on these habits for the full three weeks. 
+
+Disclaimer: Not a substitute for getting professional help from a Medical Doctor and/or a Licensed Therapist and/or a Psychiatrist. And, of course, in the case of an emergency, there’s always 911 and several different Suicide Hotline phone numbers.  
+
 
 ## Technologies Used - TBA
 
 |        |  | 
 | ------------- |:-------------:| 
-| HTML          |  | 
-| CSS           |  |   
-| Javascript    |  |
-| Markdown      |  |
-| VS Code       |  |   
-| Git           |  |  
-| Github        |  |
-|   TBA         |  |
-|   TBA         |  |
-|   TBA         |  |
+| HTML            |  | 
+| CSS             |  |   
+| Javascript      |  |
+| Markdown        |  |
+| VS Code         |  |   
+| Git             |  |  
+| Github          |  |
+| Server Side API |  |
+|   TBA           |  |
+|   TBA           |  |
 
 
 ## Table of Contents: 
@@ -60,7 +63,8 @@ To use this website,....
 
 ## Wireframe - TBA
 
-TBA - To Be Added. 
+(https://docs.google.com/presentation/d/1bcXqV381zQ7R_cCZGzUNgk2K4RcTkFkVXySek2EWayw/edit?usp=sharing) 
+
 
 ## Contributors
 
