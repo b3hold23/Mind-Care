@@ -1,4 +1,5 @@
 # Mindcare (Group Project #2)
+Mental Health Habits Tracker.
 
 ## Description 
 
@@ -41,13 +42,25 @@ Disclaimer: Not a substitute for getting professional help from a Medical Doctor
 
 ## User Story
 
-AS A USER, <br> 
-I WANT a website where I can choose habits to form and the website will autogenerate a three-week calendar to complete these habits, and I will be able to view my schedule or calendar to view weekly and daily tracked goals, <br>
+AS A USER, 
+<br> <br> 
+I WANT a website where I can choose habits to form and the website will autogenerate a three-week calendar to complete these habits, and I will be able to view my schedule or calendar to view weekly and daily tracked goals, 
+<br> <br> 
 SO THAT I can improve my mental and physical health via better habits while keeping track of my progress and being able to see my completed goals.
 
 ## Acceptance Criteria - TBA (To Be Added)
 
-TBA - To Be Added.
+1. **Criteria 1**
+
+   - **Given**: 
+   - **When**: 
+   - **Then**: 
+
+2. **Criteria 2**
+
+   - **Given**: 
+   - **When**: 
+   - **Then**: 
 
 ## Installation 
 
@@ -67,7 +80,7 @@ To use this website, create an account and then choose a habit to add to your pr
 * Alexander Davis (Redwolf917) https://github.com/Redwolf917 <br>
 * Angel Fernandez (b3hold23) https://github.com/b3hold23 <br> 
 
-## License
+## License - TBA
 
 
 ## Author Info 
