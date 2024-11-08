@@ -7,29 +7,12 @@ This is a habit-building app that will help a user to improve their mental healt
 
 Disclaimer: Not a substitute for getting professional help from a Medical Doctor and/or a Licensed Therapist and/or a Psychiatrist. And, of course, in the case of an emergency, there’s always 911 and several different Suicide Hotline phone numbers.  
 
-## Technologies Used 
-
-|        |  | 
-| ------------- |:-------------:| 
-| HTML            |  | 
-| CSS framework   |  |   
-| Javascript      |  |
-| Markdown        |  |
-| VS Code         |  |   
-| Git             |  |  
-| Github          |  |
-| Server Side API |  |
-| Bootstrap       |  |
-| React + Vite    |  |
-| Typescript      |  |
-| Sequelize       |  |
-
 ## Table of Contents: 
 
 1. Title <br>
 2. Description <br>
-3. Technologies Used <br>
-4. Table of Contents <br>
+3. Table of Contents <br>
+4. Technologies Used <br>
 5. User Story <br>
 6. Acceptance Criteria <br>
 7. Installation <br>
@@ -37,8 +20,36 @@ Disclaimer: Not a substitute for getting professional help from a Medical Doctor
 9. Wireframe <br>
 10. Contributors <br>
 11. License <br>
-12. Author Info <br>
-13. Deployed Link <br>
+12. Deployed Link <br>
+
+
+## Technologies Used 
+
+|        |  | 
+| ------------- |:-------------:| 
+| HTML             |  | 
+| CSS framework    |  |   
+| Javascript       |  |
+| Markdown         |  |
+| VS Code          |  |   
+| Git              |  |  
+| Github           |  |
+| Server Side APIs |  |
+| Bootstrap        |  |
+| React + Vite     |  |
+| Typescript       |  |
+| Sequelize        |  |
+| Node             |  |
+| NPM              |  |
+| Postgres         |  |
+| Fetch            |  |
+| FWT              |  |
+| bcrypt           |  |
+|                  |  |
+
+
+<img width="1458" alt="Screenshot 2024-11-08 at 1 25 30 AM" src="https://github.com/user-attachments/assets/424043ef-d5a1-481b-a112-69ae9f6597ae">
+
 
 ## User Story
 
@@ -68,7 +79,7 @@ N/A
 
 ## Usage 
 
-To use this website, create an account and then choose a habit to add to your profile. Then the website will generate a 3 week schedule to help you form that habit.
+To use this website, create an account and then choose one or more habits to add to your profile. Then the website will generate a three-week schedule to help you form that habit, help you keep track of your progress, and let you know when you've completed a three-week goal.
 
 ## Wireframe
 
@@ -82,12 +93,6 @@ To use this website, create an account and then choose a habit to add to your pr
 
 ## License - TBA
 
-
-## Author Info 
-
-|        |  | 
-| ------------- |:-------------:|   
-| Github    | https://github.com/b3hold23/Mind-Care |   
 
 ## Deployed Link - TBA
 
